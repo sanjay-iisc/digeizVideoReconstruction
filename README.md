@@ -1,6 +1,6 @@
 # digeizVideoReconstruction
 
-Reconstructs the correct frame order of a shuffled video using SSIM similarity and graph-based ordering.
+Reconstructs the correct frame order of a shuffled video using SSIM similarity and Two-end nearest-neighbor heuristic and local search.
 
 ---
 
