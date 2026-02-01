@@ -30,7 +30,7 @@ vector<vector<double>> filterAdjMat(const vector<vector<double>> &adjMat, const 
     return adjMatF;
 }
 
-vector<int> getImageOrderBack(const std::vector<int>& imageOrder, const vector<int> &keepIdx){
+vector<int> getImageOrderBack(const vector<int>& imageOrder, const vector<int> &keepIdx){
     const int M = (int)imageOrder.size();
 
     vector<int> globalOrder;
@@ -42,7 +42,7 @@ vector<int> getImageOrderBack(const std::vector<int>& imageOrder, const vector<i
     return globalOrder;
 }
 
-bool writeVideoFromOrder(const std::vector<int>& globalOrder,const std::string& rawImagesFolder, const std::string& outVideoPath, double fps){
+bool writeVideoFromOrder(const vector<int>& globalOrder,const string& rawImagesFolder, const string& outVideoPath, double fps){
     if(globalOrder.empty()){
         cerr<< "Order of images are empty: verify it..." << endl;
         return false;
@@ -81,7 +81,7 @@ bool writeVideoFromOrder(const std::vector<int>& globalOrder,const std::string& 
     }
 
     writer.release();
-    std::cout << "Wrote video: " << outVideoPath << "\n";
+    cout << "Wrote video: " << outVideoPath << "\n";
     return true;
 
 }
@@ -131,12 +131,12 @@ int main(){
 
     // for (const auto &a : orderFirstPass) cout << a << endl;
 
-    std::vector<int> globalOrder = getImageOrderBack(orderFirstPass, keepIdx);
+    vector<int> globalOrder = getImageOrderBack(orderFirstPass, keepIdx);
 
 
-    std::string outVideo = "../data/reconstructed.mp4";
+    string outVideo = "../data/reconstructed.mp4";
 
-    std::reverse(globalOrder.begin(), globalOrder.end());
+    reverse(globalOrder.begin(), globalOrder.end());
     bool status = writeVideoFromOrder( globalOrder,rawImagesFolder , outVideo, 25.0);
 
     cout << "Reconstruction of Images are done: " << status << endl;

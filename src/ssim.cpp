@@ -114,7 +114,6 @@ vector<vector<double>> buildSSIMDistanceMatrix(const vector<string>& paths) {
             adjMat[i][j] = adjMat[j][i] = dist;
             
             // if ((i*N + j) % 200 == 0){
-            //     #pragma omp critical
             //     cout << "Progress: i = " << i << " j=" << j << endl;
             // } 
         }
