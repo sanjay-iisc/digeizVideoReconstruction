@@ -2,6 +2,4 @@
 
 ./config.sh
 ./build.sh
-cd build ; export OMP_NUM_THREADS=24; ./videoReorder
-
-# ./videoToImage
+cd build ; OMP_NUM_THREADS=$(nproc); ./videoToImage; ./videoReorder

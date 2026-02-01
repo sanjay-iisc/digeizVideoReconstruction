@@ -80,7 +80,7 @@ vector<double> KNNscore(const vector<vector<double>> &adjMat, int K){
     vector<double> scores(N, 0.0);
 
     if (N == 0 || K <= 0 || K >= N) throw runtime_error("Check number of top K argument or adjMat ");;
-
+    
     for (int i = 0; i< N; i++){
         vector<double> dists;
         dists.reserve(N-1);

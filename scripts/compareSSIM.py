@@ -33,7 +33,7 @@ def getLinePlot(D, i = 0):
 
 
 if __name__ == "__main__":
-    fileName = "data/distanceMatSSIM_G.txt";
+    fileName = "data/distanceMatDistance.txt";
     D = np.loadtxt(fileName)  
     getLinePlot(D, i = 100)
     getHeatMap(D)
